@@ -1,7 +1,6 @@
 class Admin::ProductsController < ApplicationController
   http_basic_authenticate_with name: ENV['HTTP_BASIC_AUTH_NAME'], password: ENV['HTTP_BASIC_AUTH_PASSWORD']
-#   HTTP_BASIC_AUTH_NAME=your_name_here
-# HTTP_BASIC_AUTH_PASSWORD=your_pass_word_here
+
 
   def index
 

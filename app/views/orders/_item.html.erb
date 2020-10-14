@@ -1,4 +1,5 @@
-<% if product = Product.find_by(id: product_id) %> <% item_total = product.price * quantity %>
+<% if product = Product.find_by(id: product_id) %>
+ <% item_total = product.price * quantity %>
 
 <tr>
   <td><%= image_tag product.image.tiny %></td>
