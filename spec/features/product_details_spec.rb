@@ -21,7 +21,7 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     first('.product .pull-right').click
     expect(page).to have_css '.product-detail'
     # # DEBUG
-    save_screenshot
+    # save_screenshot
 
     # VERIFY
    
@@ -34,7 +34,7 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     first('.product header img').click
     expect(page).to have_css '.product-detail'
     # # DEBUG
-    save_screenshot
+    # save_screenshot
 
     # VERIFY
    
