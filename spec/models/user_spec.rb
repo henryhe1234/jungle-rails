@@ -93,9 +93,9 @@ RSpec.describe User, type: :model do
     end
 
     it 'expect to be true when typing without caring the case of letter' do
-      @user10 = User.new(:first_name => "Mark",:email => "j@j.com",:last_name =>"He",:password => "12345",:password_confirmation => "12345")
+    @user10 = User.new(:first_name => "Mark",:email => "eXample@domain.COM",:last_name =>"He",:password => "12345",:password_confirmation => "12345")
     @user10.save
-    user_test3 = User.authenticate_with_credentials("    J@j.com   ","12345")
+    user_test3 = User.authenticate_with_credentials("EXAMPLe@DOMAIN.CoM","12345")
     expect(user_test3).to eql(@user10)
 
     
