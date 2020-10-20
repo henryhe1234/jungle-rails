@@ -10,9 +10,11 @@ class User < ActiveRecord::Base
 
   validates :password_confirmation,presence:true
 
+  before_save :lower_case
   def self.authenticate_with_credentials(email,password)
-    email_no_space = email.strip;
-    user =  User.where("lower(email) = ?",email_no_space.downcase).first
+    # email_no_space = email.strip;
+    # user =  User.where("lower(email) = ?",email_no_space.downcase).first
+    user = User.find_by_email(email.strip.downcase)
     if user && user.authenticate(password)
       # user.authenticate(password)
       return user
@@ -21,5 +23,10 @@ class User < ActiveRecord::Base
     end
     
   end
+
+  def lower_case
+    self.email.downcase!
+  end
+
 
 end
